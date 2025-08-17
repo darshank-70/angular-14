@@ -1,1 +1,7 @@
-<p>project-details works!</p>
+<div>
+    <ng-container *ngIf="project$ | async as p">
+        <p><b>ID:</b> {{ p.id }}</p>
+        <p><b>Name:</b> {{ p.name }}</p>
+        <p><b>Owner:</b> {{ p.owner }}</p>
+      </ng-container>
+</div>

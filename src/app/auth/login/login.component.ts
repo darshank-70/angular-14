@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { FormBuilder, FormGroup } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
 import { AuthService } from 'src/app/services/auth.service';
 
@@ -7,13 +8,21 @@ import { AuthService } from 'src/app/services/auth.service';
   templateUrl: './login.component.html',
   styleUrls: ['./login.component.scss']
 })
-export class LoginComponent  {
+export class LoginComponent implements OnInit {
 
   u = ''; p = '';
-  constructor(private auth: AuthService, private router: Router, private route: ActivatedRoute) {}
+  loginForm: FormGroup | undefined;
+
+  constructor(private auth: AuthService, private router: Router, private route: ActivatedRoute, private formBuilder: FormBuilder) {}
+  ngOnInit(): void {
+    this.loginForm = this.formBuilder.group({
+      u: [''],
+      p: [''],
+    })
+  }
   submit() {
     this.auth.login(this.u, this.p);
-    const redirect = this.route.snapshot.queryParamMap.get('redirect') || '/projects';
+    const redirect = this.route.snapshot.queryParamMap.get('redirect') || '/home';
     this.router.navigateByUrl(redirect);
-
+  }
 }

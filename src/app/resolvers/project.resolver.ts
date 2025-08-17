@@ -17,8 +17,9 @@ export class ProjectResolver implements Resolve<ProjectModel> {
     route: ActivatedRouteSnapshot,
     state: RouterStateSnapshot
   ): Observable<ProjectModel> {
+    console.log(route,'ROute');
     const pro = this.projectsService.getProject(
-      route.queryParamMap.get('id') ?? ''
+      route.paramMap.get('id') ?? ''
     );
     return pro;
   }

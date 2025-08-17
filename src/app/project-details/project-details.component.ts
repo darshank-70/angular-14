@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { Observable, map } from 'rxjs';
+import { ProjectModel } from '../services/project.service';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-project-details',
@@ -6,8 +9,8 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./project-details.component.scss']
 })
 export class ProjectDetailsComponent implements OnInit {
-
-  constructor() { }
+  project$: Observable<ProjectModel> = this.route.data.pipe(map(d=> d['project']));
+  constructor(private route: ActivatedRoute) { }
 
   ngOnInit(): void {
   }

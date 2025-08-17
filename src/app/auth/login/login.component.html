@@ -1,7 +1,9 @@
+<div *ngIf="loginForm">
 <h2>Login</h2>
-    <form (ngSubmit)="submit()">
-      <input name="u" [(ngModel)]="u" placeholder="user">
-      <input name="p" [(ngModel)]="p" placeholder="pass" type="password">
-      <button type="submit">Login</button>
+    <form [formGroup]="loginForm">
+      <input name="u"placeholder="user"  formControlName="u">
+      <input name="p" formControlName="p" placeholder="pass" type="password">
+      <button type="submit" (click)="submit()">Login</button>
     </form>
+  </div>
     

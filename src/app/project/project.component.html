@@ -1,1 +1,7 @@
-<p>project works!</p>
+<div class="project-list">
+    <ul>
+        <li *ngFor="let p of projectList" (click)="navigateToProject(p.id)"> 
+         <a>  {{p.name}}</a> 
+        </li>
+    </ul>
+</div>
