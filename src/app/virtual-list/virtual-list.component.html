@@ -1,0 +1,32 @@
+<!-- The scrollable window that performs virtualization -->
+<!-- <cdk-virtual-scroll-viewport
+  [itemSize]="itemHeight"            
+  [minBufferPx]="minBufferPx"         
+  [maxBufferPx]="maxBufferPx"         
+  [style.height.px]="viewportPx"      
+  class="viewport"
+>
+  Render only the visible slice of items + buffer 
+  <ng-container
+    *cdkVirtualFor="
+      let item of items;
+      let i = index;
+      trackBy: trackByIndex
+    "
+  >
+  If the parent provided a custom template, use it; otherwise fall back to a default
+    <ng-container
+      *ngIf="itemTemplate; else defaultTpl"
+      [ngTemplateOutlet]="itemTemplate"
+      [ngTemplateOutletContext]="{ $implicit: item, index: i }"
+    >
+    </ng-container>
+
+    Default rendering if no custom template was projected
+    <ng-template #defaultTpl>
+      <div class="row">
+        {{ i + 1 }}. {{ item | json }}
+      </div>
+    </ng-template>
+  </ng-container>
+</cdk-virtual-scroll-viewport> -->

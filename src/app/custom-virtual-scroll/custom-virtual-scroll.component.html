@@ -1,0 +1,21 @@
+<div
+class="viewport"
+[style.height.px]="containerHeight"
+(scroll)="onScroll($event)"
+>
+<div class="spacer" [style.width.px]="itemHeight * visibleItemCount"></div>
+<div class="visible-items" [style.transform]="'translateY(' + (startIndex * itemHeight) + 'px)'"></div>
+<ng-container *ngFor="let item of visibleItems; let i = index">
+    <ng-container 
+    *ngIf="itemTemplate else defaultTemplate"
+    [ngTemplateOutlet]="itemTemplate"
+    [ngTemplateOutletContext]="{$implicit: item, index: startIndex + i}"
+    >
+</ng-container>
+<ng-template #defaultTemplate>
+    <div class="row" [style.height.px]="itemHeight">
+        {{startIndex + 1}}. {{item}}
+    </div>
+</ng-template>
+</ng-container>
+</div>

@@ -12,7 +12,7 @@ export class AppComponent {
   isLoggedIn = false;
 
   constructor(private authService: AuthService, private router: Router){
-    this.authService._isLoggedIn$.subscribe((res)=> {this.isLoggedIn = res; if(!res) this.router.navigate(['login'])});
+  this.authService._isLoggedIn$.subscribe((res)=> {this.isLoggedIn = res; if(!res) this.router.navigate(['login'])});
     
   }
   
