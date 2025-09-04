@@ -24,4 +24,9 @@ hello: string='';
   get visibleItems(): T[] {
     return this.items.slice(this.startIndex, this.startIndex + this.visibleItemCount)
   }
-
+  onScroll(e: Event){
+    const target = e.target as HTMLElement;
+    const scrollTop = target.scrollTop;
+    this.startIndex = Math.floor(scrollTop / this.itemHeight);
+  }
+}

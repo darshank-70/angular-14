@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
@@ -10,6 +10,7 @@ import { ProjectDetailsComponent } from './project-details/project-details.compo
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { VirtualListComponent } from './virtual-list/virtual-list.component';
 import { CustomVirtualScrollComponent } from './custom-virtual-scroll/custom-virtual-scroll.component';
+import { ScrollingModule } from '@angular/cdk/scrolling';
 @NgModule({
   declarations: [
     AppComponent,
@@ -24,7 +25,9 @@ import { CustomVirtualScrollComponent } from './custom-virtual-scroll/custom-vir
     BrowserModule,
     AppRoutingModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    ScrollingModule,
+    BrowserAnimationsModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -9,7 +9,7 @@ import { AuthService } from 'src/app/services/auth.service';
   styleUrls: ['./login.component.scss']
 })
 export class LoginComponent implements OnInit {
-
+  items = Array.from({ length: 1000 }).map((_, i) => `Item #${i}`);
   u = ''; p = '';
   loginForm: FormGroup | undefined;
 

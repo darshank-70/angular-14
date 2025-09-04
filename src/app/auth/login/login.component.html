@@ -5,5 +5,11 @@
       <input name="p" formControlName="p" placeholder="pass" type="password">
       <button type="submit" (click)="submit()">Login</button>
     </form>
+
+    <div>
+      <app-virtual-list
+      [items]="items"
+      ></app-virtual-list>
+    </div>
   </div>
     
