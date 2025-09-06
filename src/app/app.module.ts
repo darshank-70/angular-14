@@ -11,6 +11,8 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { VirtualListComponent } from './virtual-list/virtual-list.component';
 import { CustomVirtualScrollComponent } from './custom-virtual-scroll/custom-virtual-scroll.component';
 import { ScrollingModule } from '@angular/cdk/scrolling';
+import { OverlayDemoComponent } from './overlay-demo/overlay-demo.component';
+import { OverlayModule } from '@angular/cdk/overlay';
 @NgModule({
   declarations: [
     AppComponent,
@@ -19,7 +21,8 @@ import { ScrollingModule } from '@angular/cdk/scrolling';
     ProjectComponent,
     ProjectDetailsComponent,
     VirtualListComponent,
-    CustomVirtualScrollComponent
+    CustomVirtualScrollComponent,
+    OverlayDemoComponent
   ],
   imports: [
     BrowserModule,
@@ -28,6 +31,7 @@ import { ScrollingModule } from '@angular/cdk/scrolling';
     ReactiveFormsModule,
     ScrollingModule,
     BrowserAnimationsModule,
+    OverlayModule
   ],
   providers: [],
   bootstrap: [AppComponent]

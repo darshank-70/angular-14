@@ -6,17 +6,20 @@ import { ProjectComponent } from './project/project.component';
 import { ProjectDetailsComponent } from './project-details/project-details.component';
 import { ProjectResolver } from './resolvers/project.resolver';
 import { AuthGuard } from './gaurds/auth.guard';
+import { OverlayDemoComponent } from './overlay-demo/overlay-demo.component';
 
 const routes: Routes = [
   { path: '', component: HomeComponent },
   { path: 'login', component: LoginComponent },
   { path: 'projects', component: ProjectComponent, canActivate: [AuthGuard] },
+  {path: 'overlay', component: OverlayDemoComponent},
   {
     path: 'projects/:id',
     component: ProjectDetailsComponent,
     resolve: { project: ProjectResolver },
   },
   { path: '**', redirectTo: '' },
+ 
 ];
 
 @NgModule({
